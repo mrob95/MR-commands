@@ -51,7 +51,7 @@ Breathe.add_commands(
             Function(navigation.duple),
             [
                 (AppContext(title="Sublime Text"), Key("cs-d:%(n)s")),
-                (AppContext(title="visual studio code"), Key("sa-down")),
+                (AppContext("code.exe"), Key("sa-down")),
                 (AppContext(title="jupyter"), Function(navigation.duple, esc=False)),
                 (AppContext(title="pycharm"), Key("c-d:%(n)s")),
                 (

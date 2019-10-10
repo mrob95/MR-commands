@@ -106,7 +106,7 @@
 "commit all and push"          = ["commit -a -m \"\" && git push", "left:13"]
 "commit"                       = ["commit -m \"\"", "left"]
 "commit fix u"                 = "commit --fixup "
-"create ignore" = "wget https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore ."
+"create ignore" = "curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore > .gitignore"
 "diff"                         = "diff "
 "discard"                      = "checkout -- "
 "(discard all | reset hard)"   = "reset --hard"
@@ -151,3 +151,25 @@
 "status"                       = ["status", "enter"]
 "tag"                          = "tag "
 "unstage"                      = "reset -- "
+
+[tmux_commands]
+"new" = "c"
+"next" = "n"
+"previous" = "p"
+"find" = "f"
+"(close)" = "ampersand"
+"split" = "percent"
+"split horizontal" = "dquote"
+"swap" = "o"
+"numbers" = "q"
+"kill" = "x"
+"layout" = "space"
+
+[ops_class]
+"sis" = "sys161 "
+"sis debug" = "sys161 -P kernel"
+"debugger" = "os161-gdb --init-eval-command=\"target remote unix:.sockets/gdb\" kernel"
+"kernel" = "kernel"
+"go root" = "cd ~/root"
+"go compile" = "cd ~/src/kern/compile"
+"compile kernel" = "bmake && bmake install"

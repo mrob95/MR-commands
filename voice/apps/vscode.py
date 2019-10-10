@@ -37,6 +37,7 @@ Breathe.add_commands(
         "find all": Key("a-enter"),
         "replace": Key("c-h"),
         "search in directory": Key("cs-f"),
+        "search for that": Key("cs-f") + Wait() + Key("enter"),
         #
         "go to <text> [<filetype>]": Key("c-p")
         + Wait()

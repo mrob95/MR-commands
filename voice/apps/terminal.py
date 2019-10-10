@@ -27,6 +27,10 @@ Breathe.add_commands(
         + Function(clip_repo)
         + Key("home, right:15"),
         #------------------------------------------------
+        "run T mux": Text("tmux "),
+        "[T] mux <tmux_command>": Key("c-b, %(tmux_command)s"),
+        "ops <ops_command>": Text("%(ops_command)s"),
+        #------------------------------------------------
         "open link": Key("c-insert")
         + Function(lambda: utilities.browser_open(Clipboard.get_system_text())),
     },
@@ -39,6 +43,8 @@ Breathe.add_commands(
         ),
         Choice("command", BINDINGS["commands"]),
         Choice("git_command", BINDINGS["git_commands"]),
+        Choice("tmux_command", BINDINGS["tmux_commands"]),
+        Choice("ops_command", BINDINGS["ops_class"]),
     ],
 )
 

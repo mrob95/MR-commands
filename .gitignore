@@ -125,3 +125,7 @@ dmypy.json
 .pyre/
 personal.toml
 .vscode/
+
+winpython/
+RUNME*
+kaldi_model*

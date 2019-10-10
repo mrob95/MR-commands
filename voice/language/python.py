@@ -82,3 +82,44 @@ Breathe.add_commands(
         Choice("types", BINDINGS["types"], ""),
     ],
 )
+
+# ------------------------------------------------
+
+VOICE_DEV = utilities.load_toml_relative("config/python_caster.toml")
+
+Breathe.add_commands(
+    AppContext(title=["caster", "merger"]) & AppContext(title=".py"),
+    {
+        BINDINGS["function_prefix"] + " <cfun>": Text("%(cfun)s()") + Key("left"),
+        "<cmisc>": Alternating("cmisc"),
+    },
+    [Choice("cfun", VOICE_DEV["functions"]), Choice("cmisc", VOICE_DEV["misc"])],
+)
+
+# ------------------------------------------------
+
+Breathe.add_commands(
+    AppContext(title="jupyterlab"),
+    {
+        "next pane [<n>]": Key("cs-rbracket:%(n)s"),
+        "previous pane [<n>]": Key("cs-lbracket:%(n)s"),
+        "replace": Key("cs-r"),
+        "toggle cyber": Key("c-b"),
+        "(insert | new) cell": Key("a-enter"),
+        "run cell": Key("c-enter"),
+        "(next cell | necker) [<n>]": Key("s-enter:%(n)s"),
+        "split cell": Key("cs-minus"),
+        "[insert] cell above": Key("escape, a"),
+        "[insert] cell below": Key("escape, b"),
+        "merge below": Key("escape, M"),
+        "merge above": Key("escape, s-up, M"),
+        "toggle line numbers": Key("escape, L"),
+        "delete cell [<n>]": Key("escape, d, d") * Repeat("n"),
+        "select all": Key("c-a"),
+        "indent [<n>]": Key("c-rbracket:%(n)s"),
+        "outdent [<n>]": Key("c-lbracket:%(n)s"),
+        "comment line": Key("c-slash"),
+        "command pallette": Key("cs-p"),
+    },
+    ccr=False
+)
