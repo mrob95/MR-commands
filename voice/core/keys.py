@@ -2,6 +2,7 @@ from voice.imports import *
 
 CORE = utilities.load_toml_relative("config/core.toml")
 
+# Don't paste newlines into terminals
 def sanitise_clipboard():
     Clipboard.set_system_text(Clipboard.get_system_text().replace("\n", ""))
     Pause("10")
@@ -51,7 +52,7 @@ Breathe.add_commands(
             Function(navigation.duple),
             [
                 (AppContext(title="Sublime Text"), Key("cs-d:%(n)s")),
-                (AppContext("code.exe"), Key("sa-down")),
+                (AppContext("code.exe"), Key("sa-down:%(n)s")),
                 (AppContext(title="jupyter"), Function(navigation.duple, esc=False)),
                 (AppContext(title="pycharm"), Key("c-d:%(n)s")),
                 (

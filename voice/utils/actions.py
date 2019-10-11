@@ -1,6 +1,7 @@
 from dragonfly import Mouse, Pause, ActionBase, ActionError, Alternative, Compound, RuleWrap
-from dragonfly import Text as TextBase, Key as KeyBase
+from dragonfly import Text as TextBase, Key as KeyBase, Clipboard
 
+import time
 import re
 from six import string_types
 
@@ -55,6 +56,35 @@ Sample usage:
 #         text = orig.replace(" ", self.space) if orig else ""
 #         control.nexus().temp = text.replace("\n", "") if self.remove_cr else text
 #         return True
+class Read(ActionBase):
+    def __init__(self, name=None, remove_cr=False, same_is_okay=True):
+        ActionBase.__init__(self)
+        self.name = name
+        self.remove_cr = remove_cr
+        self.same_is_okay = same_is_okay
+
+    def read_selected(self, same_is_okay=False, wait=5):
+        key_wait = 0.01 * wait
+        time.sleep(key_wait)
+        cb = Clipboard(from_system=True)
+        temporary = None
+        prior_content = None
+        try:
+            prior_content = Clipboard.get_system_text()
+            Clipboard.set_system_text("")
+            Key("c-c").execute()
+            time.sleep(key_wait)
+            temporary = Clipboard.get_system_text()
+            cb.copy_to_system()
+        except Exception:
+            return None
+        return temporary
+
+    def _execute(self, data=None):
+        text = self.read_selected(self.same_is_okay)
+        if data:
+            data[self.name] = text
+        return True
 
 
 # class Retrieve(ActionBase):

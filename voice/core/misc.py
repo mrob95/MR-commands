@@ -6,7 +6,8 @@ PERSONAL = utilities.load_toml_relative("config/personal.toml")
 Breathe.add_commands(
     None,
     {
-        "<search> search that": lambda search: utilities.browser_search(url=search),
+        # "<search> search that": lambda search: utilities.browser_search(url=search),
+        "<search> search that": Read("web") + Function(lambda web, search: utilities.browser_search(text=web, url=search)),
         "<search> search <text>": lambda search, text: utilities.browser_search(
             text, url=search
         ),

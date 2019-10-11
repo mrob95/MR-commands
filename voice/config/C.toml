@@ -17,6 +17,9 @@ template_prefix = "template"
 "semi" = ["", "end:2, semicolon"]
 "type def struct" = ["typedef struct {} ;", "left:3, enter, down, end, left:2"]
 "return" = ["return ;", "left"]
+"value false" = "false"
+"value true" = "true"
+"value null" = "NULL"
 
 [types]
 "boolean"           = "bool"

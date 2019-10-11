@@ -133,6 +133,7 @@ def main():
         # input_device_index=None,  # set to an int to choose a non-default microphone
         auto_add_to_user_lexicon=True,  # set to True to possibly use cloud for pronunciations
         # cloud_dictation=None,  # set to 'gcloud' to use cloud dictation
+        lazy_compilation=False
     )
 
     # Call connect() now that the engine configuration is set.

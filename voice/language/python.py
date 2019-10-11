@@ -51,9 +51,12 @@ Breathe.add_commands(
     AppContext(title=".py"),
     {
         "<command>": Alternating("command"),
-        "fun <fun>": Text("%(fun)s()") + Key("left"),
-        # ContextAction(Store(same_is_okay=False) + Text("%(fun)s()") + Key("left") + Retrieve(action_if_text="right"),
-        # [(AppContext(title="jupyter"), Text("%(fun)s()") + Key("left"))]),
+        "fun <fun>": ContextAction(
+            Read("previous")
+            + Text("%(fun)s(%(previous)s)")
+            + Function(lambda previous: Key("left" if not previous else "").execute()),
+            [(AppContext(title="jupyter"), Text("%(fun)s()") + Key("left"))],
+        ),
         "meth <fun>": Text(".%(fun)s()") + Key("left"),
         "from typing import <types>": Text("from typing import %(types)s"),
         "type <types>": Text("%(types)s"),
@@ -121,5 +124,5 @@ Breathe.add_commands(
         "comment line": Key("c-slash"),
         "command pallette": Key("cs-p"),
     },
-    ccr=False
+    ccr=False,
 )
