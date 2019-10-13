@@ -53,7 +53,7 @@ Breathe.add_commands(
         "rename symbol": Key("f2"),
         #
         "edit lines": Key("sa-i"),
-        "sort lines": Key("f9"),
+        "sort lines": Pallette("sort ascending"),
         "edit next [<n>]": Key("c-d") * Repeat("n"),
         "skip next [<n>]": Key("c-k, c-d") * Repeat("n"),
         "edit all": Key("cs-l"),
@@ -89,7 +89,9 @@ Breathe.add_commands(
         "column <cols>": Key("as-%(cols)s"),
         "focus <panel>": Key("c-k, c-%(panel)s"),
         "move <panel>": Key("c-k, cs-%(panel)s"),
-        "split right": Key("c-backslash"),
+        # "split right": Key("c-backslash"),
+        "split right": Key("as-2, c-k, cs-right"),
+        "split definition": Key("c-k, f12"),
     },
     [
         ShortIntegerRef("ln1", 1, 1000),

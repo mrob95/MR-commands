@@ -14,7 +14,8 @@ Breathe.add_commands(
         "tiny URL that": utilities.tinyurl,
         "open diary": utilities.diary,
         "close all notepads": utilities.kill_notepad,
-        "open terminal": lambda: utilities.terminal("C:/Users/Mike/Documents"),
+        "open terminal": lambda: Popen("wt.exe"),
+        "open bash": lambda: utilities.terminal("C:/Users/Mike/Documents"),
         # -----------------------------------------------
         # Clipboard
         "paste as text": lambda: Text(Clipboard.get_system_text()).execute(),
