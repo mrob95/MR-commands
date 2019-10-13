@@ -7,11 +7,15 @@ template_prefix = "template"
 "free" = "free"
 "mallock" = "malloc"
 "mem copy" = "memcpy"
+"print" = "printf"
+"size of" = "sizeof"
+"stir length" = "strlen"
+"stir copy" = "strcpy"
 
 [commands]
-"arrow" = "->"
+"assign" = " = "
 "for loop" = ["for (i=0; i<; i++) {}", "left:2, enter, up, end, left:8"]
-"iffae" = ["if () {}", "left:2, enter, up, end, left:3"]
+"iffae" = ["if () {}", "left, enter, up, end, left:3"]
 "shells" = ["else {}", "left, enter"]
 "structure" = ["struct  {};", "left:2, enter, up, end, left:2"]
 "semi" = ["", "end:2, semicolon"]
@@ -20,13 +24,14 @@ template_prefix = "template"
 "value false" = "false"
 "value true" = "true"
 "value null" = "NULL"
+"while loop" = ["while () {}", "left, enter, up, end, left:3"]
 
 [types]
 "boolean"           = "bool"
 "inter" = "int"
 "unsigned" = "unsigned"
 "void" = "void"
-"struct" = "struct"
-"enum" = "enum"
+"struct" = "struct "
+"enum" = "enum "
 
 [templates]

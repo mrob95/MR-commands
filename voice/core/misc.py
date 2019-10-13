@@ -31,3 +31,6 @@ Breathe.add_commands(
 Breathe.add_commands(
     None, {"<personal>": Text("%(personal)s")}, [Choice("personal", PERSONAL)]
 )
+
+if get_engine()._name == "natlink":
+    Breathe.add_commands(None, {"reboot dragon": Function(utilities.reboot)}, ccr=False)

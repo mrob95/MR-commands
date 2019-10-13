@@ -28,9 +28,9 @@ def go_to_n(n):
     current = vda.GetCurrentDesktopNumber() + 1
     if n>=1 and n != current:
         if current>n:
-            Key("wc-left/10:" + str(current-n)).execute()
+            Key("wc-left/15:" + str(current-n)).execute()
         else:
-            Key("wc-right/10:" + str(n-current)).execute()
+            Key("wc-right/15:" + str(n-current)).execute()
     # vda.GoToDesktopNumber(n-1)
 
 def close_all():

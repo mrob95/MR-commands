@@ -151,6 +151,7 @@
 "status"                       = ["status", "enter"]
 "tag"                          = "tag "
 "unstage"                      = "reset -- "
+"username" = "mrob95"
 
 [tmux_commands]
 "new" = "c"
@@ -171,5 +172,5 @@
 "debugger" = "os161-gdb --init-eval-command=\"target remote unix:.sockets/gdb\" kernel"
 "kernel" = "kernel"
 "go root" = "cd ~/root"
-"go compile" = "cd ~/src/kern/compile"
-"compile kernel" = "bmake && bmake install"
+"go compile" = "cd ~/src/kern/compile/DUMBVM"
+"compile kernel" = "bmake -j8 && bmake install"

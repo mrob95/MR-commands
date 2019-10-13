@@ -21,7 +21,7 @@ Breathe.add_commands(
         "<command>": Alternating("command"),
         #------------------------------------------------
         "git <git_command>": Text("git ") + Alternating("git_command"),
-        "git <command> <snake_text>": Text("git %(dictcommand)s %(snake_text)s"),
+        "git <dictcommand> <snake_text>": Text("git %(dictcommand)s %(snake_text)s"),
         "git clone": Text("git clone ") + Function(clip_repo) + Text(" "),
         "git remote add": Text("git remote add  ")
         + Function(clip_repo)

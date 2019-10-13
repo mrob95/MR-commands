@@ -11,8 +11,11 @@ Breathe.add_commands(
         "type <types>": Text("%(types)s"),
         "function <types>": Text("%(types)s  () {}")
         + Key("left, enter, up, end, left:3"),
+        "comment [<text>]": lambda text: Text("// %s" % text.capitalize()).execute(),
+        "arrow [<snaketext>]": Text("->%(snaketext)s"),
     },
     extras=[
+        Dictation("snaketext", "").lower().replace(" ", "_"),
         Choice("command", BINDINGS["commands"]),
         Choice("fun", BINDINGS["functions"]),
         Choice("types", BINDINGS["types"]),
