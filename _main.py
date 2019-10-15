@@ -1,3 +1,7 @@
+import cProfile, pstats
+pr = cProfile.Profile()
+pr.enable()
+
 import time
 start = time.time()
 import logging
@@ -28,3 +32,11 @@ Breathe.load_modules(modules)
 elapsed = time.time()-start
 print("%s elapsed" % elapsed)
 
+pr.disable()
+
+out_stream = open("statscum.log", 'w')
+
+# sortby = 'tottime'
+sortby = 'cumulative'
+ps = pstats.Stats(pr, stream=out_stream).strip_dirs().sort_stats(sortby).print_stats(.3)
+out_stream.close()
