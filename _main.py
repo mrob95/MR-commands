@@ -1,6 +1,9 @@
-import cProfile, pstats
-pr = cProfile.Profile()
-pr.enable()
+
+profiling = False
+if profiling:
+    import cProfile, pstats
+    pr = cProfile.Profile()
+    pr.enable()
 
 import time
 start = time.time()
@@ -32,11 +35,9 @@ Breathe.load_modules(modules)
 elapsed = time.time()-start
 print("%s elapsed" % elapsed)
 
-pr.disable()
-
-out_stream = open("statscum.log", 'w')
-
-# sortby = 'tottime'
-sortby = 'cumulative'
-ps = pstats.Stats(pr, stream=out_stream).strip_dirs().sort_stats(sortby).print_stats(.3)
-out_stream.close()
+if profiling:
+    pr.disable()
+    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats.log", 'w+')
+    sortby = 'tottime'
+    ps = pstats.Stats(pr, stream=out_stream).strip_dirs().sort_stats(sortby).print_stats(.3)
+    out_stream.close()
