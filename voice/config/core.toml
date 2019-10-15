@@ -101,6 +101,8 @@
 # "splat"              = "c-backspace"
 # "splat right"        = "c-delete"
 "deli"                 = "del"
+"page up"              = "pgup"
+"page down"            = "pgdown"
 
 [misc_core_keys]
 "eskimo"               = "escape"

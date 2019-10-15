@@ -1,12 +1,5 @@
 pronunciation                   = "R"
 "title_contexts"                = [".r", "RStudio", "Rterm"]
-function_prefix                 = "fun"
-"graph_prefix"                  = "graph"
-"model_prefix"                  = "model"
-"argument_prefix"               = "meant"
-"template_prefix"               = "template"
-"markdown_prefix"               = "markdown"
-library_prefix                  = "library"
 
 [commands]
 "assign"                        = " <- "

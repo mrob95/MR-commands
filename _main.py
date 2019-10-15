@@ -16,8 +16,8 @@ extras_module = {
 modules = {
     "voice": {
         "core": ["alphanumeric", "keys", "misc", "mouse", "punctuation", "text", "windows"],
-        "apps": ["chrome", "vscode", "explorer", "terminal", "kindle"],
-        "language": ["python", "standardml", "markdown", "toml", "C"],
+        "apps": ["chrome", "vscode", "explorer", "terminal", "kindle", "rstudio", "spotify", "photoshop"],
+        "language": ["python", "standardml", "markdown", "toml", "C", "r"],
     }
 }
 
