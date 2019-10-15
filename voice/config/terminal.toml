@@ -167,6 +167,7 @@
 "numbers" = "q"
 "kill" = "x"
 "layout" = "space"
+"page up" = "pgup"
 
 [ops_class]
 "sis" = "sys161 "

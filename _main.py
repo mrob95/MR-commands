@@ -1,5 +1,5 @@
 
-profiling = False
+profiling = True
 if profiling:
     import cProfile, pstats
     pr = cProfile.Profile()
@@ -37,7 +37,8 @@ print("%s elapsed" % elapsed)
 
 if profiling:
     pr.disable()
-    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats.log", 'w+')
-    sortby = 'tottime'
+    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats3.log", 'w+')
+    # sortby = 'tottime'
+    sortby = 'cumtime'
     ps = pstats.Stats(pr, stream=out_stream).strip_dirs().sort_stats(sortby).print_stats(.3)
     out_stream.close()
