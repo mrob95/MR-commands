@@ -11,6 +11,14 @@ template_prefix = "template"
 "size of" = "sizeof"
 "stir length" = "strlen"
 "stir copy" = "strcpy"
+"ops lock create" = "lock_create"
+"ops lock destroy" = "lock_destroy"
+"ops lock release" = "lock_release"
+"ops lock acquire" = "lock_acquire"
+"ops C V create" = "cv_create"
+"ops C V destroy" = "cv_destroy"
+"ops C V signal" = "cv_signal"
+"ops C V broadcast" = "cv_broadcast"
 
 [commands]
 "assign" = " = "
@@ -27,11 +35,13 @@ template_prefix = "template"
 "while loop" = ["while () {}", "left, enter, up, end, left:3"]
 
 [types]
-"boolean"           = "bool"
+"boolean" = "bool"
 "inter" = "int"
 "unsigned" = "unsigned"
 "void" = "void"
 "struct" = "struct "
 "enum" = "enum "
+"ops lock" ="struct lock *"
+"ops C V" = "struct cv *"
 
 [templates]

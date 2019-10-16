@@ -6,7 +6,9 @@ Breathe.add_commands(
     AppContext(title=BINDINGS["title_contexts"]),
     {
         "<command>": Alternating("command"),
-        BINDINGS["function_prefix"] + " <fun>": Text("%(fun)s()") + Key("left"),
+        "fun <fun>": Read("previous")
+            + Text("%(fun)s(%(previous)s);")
+            + Function(lambda previous: Key("" if previous else "left:2").execute()),
         "valley <types>": Text("%(types)s ;") + Key("left"),
         "type <types>": Text("%(types)s"),
         "function <types>": Text("%(types)s  () {}")

@@ -1,5 +1,5 @@
 
-profiling = True
+profiling = False
 if profiling:
     import cProfile, pstats
     pr = cProfile.Profile()
@@ -23,7 +23,7 @@ extras_module = {
 modules = {
     "voice": {
         "core": ["alphanumeric", "keys", "misc", "mouse", "punctuation", "text", "windows"],
-        "apps": ["chrome", "vscode", "explorer", "terminal", "kindle", "rstudio", "spotify", "photoshop"],
+        "apps": ["chrome", "vscode", "explorer", "terminal", "kindle", "rstudio", "spotify", "photoshop", "lyx"],
         "language": ["python", "standardml", "markdown", "toml", "C", "r"],
     }
 }
@@ -37,8 +37,8 @@ print("%s elapsed" % elapsed)
 
 if profiling:
     pr.disable()
-    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats3.log", 'w+')
-    # sortby = 'tottime'
-    sortby = 'cumtime'
+    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats4.log", 'w+')
+    sortby = 'tottime'
+    # sortby = 'cumtime'
     ps = pstats.Stats(pr, stream=out_stream).strip_dirs().sort_stats(sortby).print_stats(.3)
     out_stream.close()

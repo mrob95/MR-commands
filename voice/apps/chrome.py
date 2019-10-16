@@ -30,7 +30,7 @@ Breathe.add_commands(
         "show bookmarks": Key("cs-o"),
         "switch user": Key("cs-m"),
         "chrome task manager": Key("s-escape"),
-        "[toggle] full-screen": Key("f11"),
+        "[toggle] full screen": Key("f11"),
         "focus notification": Key("a-n"),
         "allow notification": Key("as-a"),
         "deny notification": Key("as-a"),
