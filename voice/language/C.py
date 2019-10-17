@@ -7,13 +7,12 @@ Breathe.add_commands(
     {
         "<command>": Alternating("command"),
         "fun <fun>": Read("previous")
-            + Text("%(fun)s(%(previous)s);")
-            + Function(lambda previous: Key("" if previous else "left:2").execute()),
+        + Text("%(fun)s(%(previous)s);")
+        + Function(lambda previous: Key("" if previous else "left:2").execute()),
         "valley <types>": Text("%(types)s ;") + Key("left"),
         "type <types>": Text("%(types)s"),
         "function <types>": Text("%(types)s  () {}")
         + Key("left, enter, up, end, left:3"),
-        "comment [<text>]": lambda text: Text("// %s" % text.capitalize()).execute(),
         "arrow [<snaketext>]": Text("->%(snaketext)s"),
     },
     extras=[
@@ -22,5 +21,11 @@ Breathe.add_commands(
         Choice("fun", BINDINGS["functions"]),
         Choice("types", BINDINGS["types"]),
     ],
+)
+
+Breathe.add_commands(
+    AppContext(title=BINDINGS["title_contexts"]),
+    {"comment [<text>]": lambda text: Text("// %s" % text.capitalize()).execute()},
+    ccr=False,
 )
 

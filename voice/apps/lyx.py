@@ -16,7 +16,7 @@ def matrix(rows, cols):
 
 
 Breathe.add_commands(
-    AppContext(executable="lyx"),
+    AppContext(executable="lyx.exe"),
     {
         "<control>": Key("%(control)s"),
         "<control_repeat> [<n>]": Key("%(control_repeat)s") * Repeat("n"),
@@ -29,7 +29,7 @@ Breathe.add_commands(
 )
 
 Breathe.add_commands(
-    AppContext(executable="lyx"),
+    AppContext(executable="lyx.exe"),
     {
         "<numbers>": Text("%(numbers)s"),
         BINDINGS["symbol1_prefix"] + " <symbol1>": Text("\\%(symbol1)s "),
@@ -65,66 +65,66 @@ Breathe.add_commands(
 )
 
 Breathe.add_commands(
-    AppContext(executable="lyx"),
+    AppContext(executable="lyx.exe"),
     {
-        "[<before>] integral from <sequence1> to <sequence2>": ExecNested("before")
+        "[<before>] integral from <sequence1> to <sequence2>": Exec("before")
         + Text("\\int _")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("right, caret")
-        + ExecNested("sequence2")
+        + Exec("sequence2")
         + Key("right"),
-        "[<before>] definite from <sequence1> to <sequence2>": ExecNested("before")
+        "[<before>] definite from <sequence1> to <sequence2>": Exec("before")
         + Key("a-m, lbracket, right, underscore")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("right, caret")
-        + ExecNested("sequence2")
+        + Exec("sequence2")
         + Key("right, left:2"),
-        "[<before>] differential <sequence1> by <sequence2>": ExecNested("before")
+        "[<before>] differential <sequence1> by <sequence2>": Exec("before")
         + Key("a-m, f, d")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("down, d")
-        + ExecNested("sequence2")
+        + Exec("sequence2")
         + Key("right"),
-        "[<before>] sum from <sequence1> to <sequence2>": ExecNested("before")
+        "[<before>] sum from <sequence1> to <sequence2>": Exec("before")
         + Text("\\stackrelthree ")
         + Key("down")
         + Text("\\sum ")
         + Key("down")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("up:2")
-        + ExecNested("sequence2")
+        + Exec("sequence2")
         + Key("right"),
-        "[<before>] limit from <sequence1> to <sequence2>": ExecNested("before")
+        "[<before>] limit from <sequence1> to <sequence2>": Exec("before")
         + Text("\\underset \\lim ")
         + Key("down")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Text("\\rightarrow ")
-        + ExecNested("sequence2")
+        + Exec("sequence2")
         + Key("right"),
-        "[<before>] argument that <minmax> <sequence1>": ExecNested("before")
+        "[<before>] argument that <minmax> <sequence1>": Exec("before")
         + Text("\\underset \\arg \\%(minmax)s ")
         + Key("down")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("right"),
-        "[<before>] <minmax> by <sequence1>": ExecNested("before")
+        "[<before>] <minmax> by <sequence1>": Exec("before")
         + Text("\\underset \\%(minmax)s ")
         + Key("down")
-        + ExecNested("sequence1")
+        + Exec("sequence1")
         + Key("right"),
-        "[<before>] <script1> <singleton1> [<after>]": ExecNested("before")
+        "[<before>] <script1> <singleton1> [<after>]": Exec("before")
         + Key("%(script1)s")
-        + ExecNested("singleton1")
+        + Exec("singleton1")
         + Key("right")
-        + ExecNested("after"),
-        "[<before>] <script1> <singleton1> <script2> <singleton2> [<after>]": ExecNested(
+        + Exec("after"),
+        "[<before>] <script1> <singleton1> <script2> <singleton2> [<after>]": Exec(
             "before"
         )
         + Key("%(script1)s")
-        + ExecNested("singleton1")
+        + Exec("singleton1")
         + Key("right, %(script2)s")
-        + ExecNested("singleton2")
+        + Exec("singleton2")
         + Key("right")
-        + ExecNested("after"),
+        + Exec("after"),
     },
     extras=[
         Choice(
@@ -132,13 +132,13 @@ Breathe.add_commands(
         ),
         Choice("script1", {"sub": "_", "super": "^"}),
         Choice("script2", {"sub": "_", "super": "^"}),
-        Nested("before", 8),
-        Nested("after", 8),
-        Nested("singleton1", 1),
-        Nested("singleton2", 1),
-        Nested("sequence1", 4),
-        Nested("sequence2", 4),
+        CommandsRef("before", 8),
+        CommandsRef("after", 8),
+        CommandsRef("singleton1", 1),
+        CommandsRef("singleton2", 1),
+        CommandsRef("sequence1", 4),
+        CommandsRef("sequence2", 4),
     ],
-    nested=True,
+    top_level=True,
 )
 

@@ -74,7 +74,7 @@ Breathe.add_commands(
         "full screen": Key("f11"),
         "toggle side bar": Key("c-b"),
         "(toggle | show) problems": Key("cs-m"),
-        "flash problems": Key("cs-m") + Pause("500") + Key("cs-m"),
+        "flash problems": Key("cs-m") + Pause("50") + Key("cs-m"),
         "show extensions": Key("cs-x"),
         "show explorer": Key("cs-e"),
         "show terminal": Key("c-apostrophe"),

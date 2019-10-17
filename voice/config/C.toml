@@ -19,6 +19,10 @@ template_prefix = "template"
 "ops C V destroy" = "cv_destroy"
 "ops C V signal" = "cv_signal"
 "ops C V broadcast" = "cv_broadcast"
+"ops semaphore create" = "sem_create"
+"ops semaphore destroy" = "sem_destroy"
+"ops semaphore increment" = "V"
+"ops semaphore decrement" = "P"
 
 [commands]
 "assign" = " = "
@@ -43,5 +47,6 @@ template_prefix = "template"
 "enum" = "enum "
 "ops lock" ="struct lock *"
 "ops C V" = "struct cv *"
+"ops semaphore" = "struct semaphore *"
 
 [templates]
