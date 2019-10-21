@@ -28,6 +28,10 @@ template_prefix = "template"
 "assign" = " = "
 "for loop" = ["for (i=0; i<; i++) {}", "left:2, enter, up, end, left:8"]
 "iffae" = ["if () {}", "left, enter, up, end, left:3"]
+"hash include" = ["#include <>", "left"]
+"hash define" = ["#define "]
+"lodge and" = " && "
+"lodge or" = " || "
 "shells" = ["else {}", "left, enter"]
 "structure" = ["struct  {};", "left:2, enter, up, end, left:2"]
 "semi" = ["", "end:2, semicolon"]

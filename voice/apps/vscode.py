@@ -86,6 +86,7 @@ Breathe.add_commands(
         "build it": Key("c-b"),
         "build with": Key("cs-b"),
         "format document": Key("as-f"),
+        "preview html": Key("cs-v"),
         #
         "column <cols>": Key("as-%(cols)s"),
         "focus <panel>": Key("c-k, c-%(panel)s"),

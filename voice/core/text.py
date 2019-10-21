@@ -20,13 +20,11 @@ Breathe.add_commands(
 Breathe.add_commands(
     None,
     {
-        "[<sequence_of_commands>] dictate <text>":
-            Exec("sequence_of_commands") + Text("%(text)s"),
-        "<sequence_of_commands> and repeat that <n> times":
-            Exec("sequence_of_commands") * Repeat("n"),
+        "[<sequence_of_commands>] dictate <text>": Exec("sequence_of_commands")
+        + Text("%(text)s"),
+        "<sequence_of_commands> [and repeat that <n> times]": Exec("sequence_of_commands")
+        * Repeat("n"),
     },
-    [
-        CommandsRef("sequence_of_commands", 12)
-    ],
-    top_level=True
+    [CommandsRef("sequence_of_commands", 16)],
+    top_level=True,
 )

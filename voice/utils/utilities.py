@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import io, os, sys, time, re, datetime
-import toml, webbrowser
+import toml, webbrowser, json
 from PIL import ImageGrab
 from subprocess import Popen
 from dragonfly import Choice, Clipboard, Key, Window
@@ -136,8 +136,20 @@ def browser_search(text=None, url="https://www.google.com/search?q=%s"):
     url = url % quote(text)
     browser_open(url)
 
-def terminal(dir, wt=False):
+def terminal(dir):
     Popen(["C:/Program Files/Git/git-bash.exe", "--cd=" + dir.replace("\\", "/")])
+
+def windows_terminal(guid, dir):
+    settings_path = "C:/Users/Mike/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/profiles.json"
+    with io.open(settings_path, "r", encoding="utf-8") as f:
+        settings = json.loads(f.read())
+        for profile in settings["profiles"]:
+            if profile["guid"] == guid:
+                profile["startingDirectory"] = dir
+    with io.open(settings_path, "w", encoding="utf-8") as f:
+        f.write(unicode(json.dumps(settings)))
+    Popen("wt.exe")
+
 
 def mathfly_switch():
     Popen("C:/Users/Mike/Documents/NatLink/mathfly/SwitchHere.bat")

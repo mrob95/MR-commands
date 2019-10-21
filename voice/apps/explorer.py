@@ -29,6 +29,7 @@ Breathe.add_commands(
         "go forward [<n>]": Key("a-right:%(n)s"),
         "go <folder>": Key("a-d/10") + Text("%(folder)s") + Key("enter"),
         "follow <letter_rep>": Text("%(letter_rep)s") + Key("enter"),
+        # "terminal here": lambda: utilities.windows_terminal("{0caa0dad-35be-5f56-a8ff-afceeeaa6101}", current_directory().replace("\\", "/")),
         "terminal here": Function(
             lambda: utilities.terminal(current_directory().replace("\\", "/"))
         ),
