@@ -51,7 +51,7 @@
 "caret"                   = "caret"
 "comma"                   = "comma"
 "co lace"                 = "colon, space"
-"boom"                    = "comma, space"
+"(boom | boomer)"         = "comma, space"
 "dollar"                  = "dollar"
 "point"                   = "dot"
 "thin quotes"             = "apostrophe"

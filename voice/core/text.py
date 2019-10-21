@@ -7,24 +7,26 @@ Breathe.add_commands(
     {
         "say <text> [brunt]": Function(
             textformat.master_format_text, capitalisation=0, spacing=0
-        ),
-        "(<capitalisation> <spacing> | <capitalisation> | <spacing>) (bow|bowel) <text> [brunt]": textformat.master_format_text,
+        )
     },
-    [
-        Choice("capitalisation", CORE["capitalisation"], 0),
-        Choice("spacing", CORE["spacing"], 0),
-    ],
 )
 
 
 Breathe.add_commands(
     None,
     {
-        "[<sequence_of_commands>] dictate <text>": Exec("sequence_of_commands")
-        + Text("%(text)s"),
-        "<sequence_of_commands> [and repeat that <n> times]": Exec("sequence_of_commands")
-        * Repeat("n"),
+        "<sequence_of_commands>": Exec("sequence_of_commands"),
+        "[<sequence_of_commands>] (<capitalisation> <spacing> | <capitalisation> | <spacing>) (bow|bowel) <text>": Exec(
+            "sequence_of_commands"
+        )
+        + Function(textformat.master_format_text),
+        # "<sequence_of_commands> [and repeat that <n> times]": Exec("sequence_of_commands")
+        # * Repeat("n"),
     },
-    [CommandsRef("sequence_of_commands", 16)],
+    [
+        CommandsRef("sequence_of_commands", 16),
+        Choice("capitalisation", CORE["capitalisation"], 0),
+        Choice("spacing", CORE["spacing"], 0),
+    ],
     top_level=True,
 )
