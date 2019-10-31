@@ -53,4 +53,4 @@ def formatted_text(capitalisation, spacing, t):
     return t
 
 def master_format_text(capitalisation, spacing, text):
-    Text(formatted_text(capitalisation, spacing, unicode(text))).execute()
+    Text(formatted_text(capitalisation, spacing, text)).execute()

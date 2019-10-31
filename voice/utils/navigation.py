@@ -1,7 +1,9 @@
 from dragonfly import *
 from dragonfly.actions.action_mouse import get_cursor_position
 import time, struct
-import utilities
+# import utilities
+
+from voice.utils import utilities
 
 key_wait = 0.05
 

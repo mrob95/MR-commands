@@ -31,8 +31,7 @@
 "W get"                  = "wget "
 "curly"                  = "curl "
 "catty"                  = "cat "
-"vagrant up" = "vagrant up"
-"vagrant SSH" = "vagrant ssh"
+"V S code here"          = ["code .", "enter"]
 #------------------------------------------------------
 "pacman install" = "pacman -S "
 "apt install" = "sudo apt install "
@@ -56,7 +55,7 @@
 "python 2"               = "python27 "
 "python 3 pytest"        = "python3 -m pytest "
 "python 2 pytest"        = "python27 -m pytest "
-"python 2 64 "           = "C:/Python27-64/python.exe "
+"python 2 64"            = "C:/Python27-64/python.exe "
 "python 2 pip [install]" = "python27 -m pip install "
 "python 3 pip [install]" = "python3 -m pip install "
 "upgrade pip" = "--upgrade pip"
@@ -91,7 +90,7 @@
 "new branch"                   = "checkout -b "
 "add"                          = "add "
 "add all"                      = "add -A"
-"add force "                   = "add -f "
+"add force"                    = "add -f "
 "remove"                       = "rm "
 "remove cashed"                = "rm --cached "
 "branch set upstream [to]"     = "branch --set-upstream-to="

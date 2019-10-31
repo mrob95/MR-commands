@@ -22,6 +22,7 @@ modules = {
     "voice": {
         "core": [
             "alphanumeric",
+            # "alias",
             "keys",
             "misc",
             "mouse",
@@ -38,8 +39,8 @@ modules = {
             "rstudio",
             "spotify",
             "photoshop",
-            "lyx",
-            "ScientificNotebook55",
+            # "lyx",
+            # "ScientificNotebook55",
         ],
         "language": ["python", "standardml", "markdown", "toml", "C", "r"],
     }
@@ -54,9 +55,9 @@ print("%s elapsed" % elapsed)
 
 if profiling:
     pr.disable()
-    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats4.log", "w+")
-    sortby = "tottime"
-    # sortby = 'cumtime'
+    out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats7.log", "w+")
+    # sortby = "tottime"
+    sortby = 'cumtime'
     ps = (
         pstats.Stats(pr, stream=out_stream)
         .strip_dirs()

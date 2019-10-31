@@ -4,7 +4,7 @@ BINDINGS = utilities.load_toml_relative("config/r.toml")
 
 
 def rfunc(rf, selection):
-    if type(rf) in [str, unicode]:
+    if isinstance(rf, string_types):
         action = Text("%s(%s)" % (rf, selection)) + Key("" if selection else "left")
     else:
         action = (

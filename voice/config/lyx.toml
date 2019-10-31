@@ -175,7 +175,7 @@
 "kernel"                     = "ker"
 "unit"                       = "unitone"
 "unit two"                   = "unittwo"
-"unit fraction "             = "unitfrac"
+"unit fraction"              = "unitfrac"
 "text fraction"              = "tfrac"
 "display fraction"           = "dfrac"
 "continued fraction"         = "cfrac"

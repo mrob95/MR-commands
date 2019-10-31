@@ -4,7 +4,10 @@ import toml, webbrowser, json
 from PIL import ImageGrab
 from subprocess import Popen
 from dragonfly import Choice, Clipboard, Key, Window
-from urllib2 import Request, urlopen, quote
+# try:
+#     from urllib2 import Request, urlopen, quote
+# except ImportError:
+#     from urllib import Request, urlopen, quote
 # from urllib.parse import quote_plus
 import threading
 try:

@@ -7,7 +7,9 @@ Breathe.add_commands(
     {
         "say <text> [brunt]": Function(
             textformat.master_format_text, capitalisation=0, spacing=0
-        )
+        ),
+        # "(<capitalisation> <spacing> | <capitalisation> | <spacing>) (bow|bowel) <text>":
+        #     Function(textformat.master_format_text),
     },
 )
 

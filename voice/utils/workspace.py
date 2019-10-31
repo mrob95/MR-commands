@@ -1,7 +1,7 @@
 from dragonfly import Window, Key
 import struct
 from ctypes import cdll
-import utilities
+from voice.utils import utilities
 
 # https://github.com/mrob95/pyVirtualDesktopAccessor
 if struct.calcsize("P")*8 == 32:

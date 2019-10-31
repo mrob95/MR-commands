@@ -1,8 +1,10 @@
 from dragonfly import Playback, Clipboard, ActionBase
 
 from .actions import Key, Text, SlowKey, SlowText
-import utilities
+from voice.utils import utilities
 import re
+from six import string_types
+
 # Alternate between executing as text and executing as keys
 # "<example>": Alternating("example")
 class Alternating(ActionBase):
@@ -12,7 +14,7 @@ class Alternating(ActionBase):
 
     def _execute(self, data=None):
         command = data[self.command]
-        if type(command) in [str, int, unicode]:
+        if isinstance(command, string_types) or isinstance(command, int):
             Text(str(command)).execute()
         elif type(command) in [list, tuple] and len(command) == 1:
             (Text(command[0]) + Key("left")).execute()
@@ -30,7 +32,7 @@ class SlowAlternating(ActionBase):
 
     def _execute(self, data=None):
         command = data[self.command]
-        if type(command) in [str, int, unicode]:
+        if isinstance(command, string_types) or isinstance(command, int):
             SlowText(str(command)).execute()
         elif type(command) in [list, tuple]:
             for i in range(len(command)):

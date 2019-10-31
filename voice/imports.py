@@ -10,6 +10,7 @@ from .utils.actions import Text, Key, SlowKey, SlowText, Read
 from .utils.execution import Alternating, SlowAlternating
 
 from subprocess import Popen
+from six import string_types
 
 # Breathe = CCRMerger()
 from breathe import Breathe, CommandContext, CommandsRef, Exec
