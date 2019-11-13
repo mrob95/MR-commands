@@ -11,7 +11,7 @@ Breathe.add_commands(
         "close window": Key("a-f4"),
         "show work [spaces]": Key("w-tab"),
         "(create | new) work [space]": Key("wc-d"),
-        "close work [space]": Key("wc-f4"),
+        "close work space": Key("wc-f4"),
         "next work [space] [<n>]": Key("wc-right") * Repeat("n"),
         "(previous | prior) work [space] [<n>]": Key("wc-left") * Repeat("n"),
         "go work [space] <n>": Function(lambda n: workspace.go_to_n(n)),
