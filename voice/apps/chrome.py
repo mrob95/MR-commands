@@ -22,7 +22,7 @@ Breathe.add_commands(
         "home page": Key("a-home"),
         # "show history"            : Key("c-h"),
         "show history": Key("c-t") + Text("chrome://history/\n"),
-        "[google] search": Key("c-l"),
+        "google search": Key("c-l"),
         "show downloads": Key("c-j"),
         "[add] bookmark": Key("c-d"),
         "bookmark all tabs": Key("cs-d"),

@@ -3,7 +3,7 @@ from voice.imports import *
 BINDINGS = utilities.load_toml_relative("config/python.toml")
 
 Breathe.add_commands(
-    AppContext(title=".py"),
+    AppContext(title=BINDINGS["title_contexts"]),
     {
         # "create setters":
         #     Function(execution.python_setters),
@@ -48,7 +48,7 @@ Breathe.add_commands(
 )
 
 Breathe.add_commands(
-    AppContext(title=".py"),
+    AppContext(title=BINDINGS["title_contexts"]),
     {
         "<command>": Alternating("command"),
         "fun <fun>": ContextAction(

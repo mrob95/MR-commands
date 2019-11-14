@@ -141,18 +141,6 @@ def browser_search(text=None, url="https://www.google.com/search?q=%s"):
 def terminal(dir):
     Popen(["C:/Program Files/Git/git-bash.exe", "--cd=" + dir.replace("\\", "/")])
 
-def windows_terminal(guid, dir):
-    settings_path = "C:/Users/Mike/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/profiles.json"
-    with io.open(settings_path, "r", encoding="utf-8") as f:
-        settings = json.loads(f.read())
-        for profile in settings["profiles"]:
-            if profile["guid"] == guid:
-                profile["startingDirectory"] = dir
-    with io.open(settings_path, "w", encoding="utf-8") as f:
-        f.write(unicode(json.dumps(settings)))
-    Popen("wt.exe")
-
-
 def mathfly_switch():
     Popen("C:/Users/Mike/Documents/NatLink/mathfly/SwitchHere.bat")
 
@@ -187,7 +175,7 @@ def chrome_get_url():
     address_control = automation.FindControl(control, lambda c, d: isinstance(c, automation.EditControl) and "Address and search bar" in c.Name)
     return address_control.CurrentValue()
 
-def image_name(dir="C:/Users/Mike/Pictures/saved"):
+def image_name(dir=os.path.expandvars("%USERPROFILE%/Pictures/saved")):
     now = datetime.datetime.now()
     file_name = str(now).rsplit(".", 1)[0].replace(":", "")
     return "%s/%s" % (dir, file_name)
