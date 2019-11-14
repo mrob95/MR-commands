@@ -22,7 +22,7 @@ modules = {
     "voice": {
         "core": [
             "alphanumeric",
-            # "alias",
+            "alias",
             "keys",
             "misc",
             "mouse",

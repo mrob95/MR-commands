@@ -1,23 +1,24 @@
 from voice.imports import *
 
-aliases = DictList("aliases", utilities.load_toml_relative("config/aliases.toml"))
+# aliases = DictList("aliases", utilities.load_toml_relative("config/aliases.toml"))
+aliases = DictList("aliases")
 
 
 def add_alias(spec):
     text = utilities.read_selected(True)
     if text and spec:
         aliases[str(spec)] = text
-        utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
+        # utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
 
 def delete_aliases():
     aliases.clear()
-    utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
+    # utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
 
 def delete_alias(alias):
     for k, v in dict(aliases).items():
         if v == alias:
             del aliases[k]
-            utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
+            # utilities.save_toml_relative(dict(aliases), "config/aliases.toml")
             break
 
 Breathe.add_commands(

@@ -4,11 +4,10 @@ import toml, webbrowser, json
 from PIL import ImageGrab
 from subprocess import Popen
 from dragonfly import Choice, Clipboard, Key, Window
-# try:
-#     from urllib2 import Request, urlopen, quote
-# except ImportError:
-#     from urllib import Request, urlopen, quote
-# from urllib.parse import quote_plus
+from six import PY2
+if PY2:
+    from urllib2 import Request, urlopen, quote
+
 import threading
 try:
     import uiautomation as automation
