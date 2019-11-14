@@ -42,7 +42,7 @@ modules = {
             # "lyx",
             # "ScientificNotebook55",
         ],
-        "language": ["python", "standardml", "markdown", "toml", "C", "r"],
+        "language": ["python", "standardml", "markdown", "toml", "C", "r", "racket"],
     }
 }
 
@@ -57,7 +57,7 @@ if profiling:
     pr.disable()
     out_stream = open("C:/Users/Mike/Documents/GitHub/new_merger2/stats7.log", "w+")
     # sortby = "tottime"
-    sortby = 'cumtime'
+    sortby = "cumtime"
     ps = (
         pstats.Stats(pr, stream=out_stream)
         .strip_dirs()

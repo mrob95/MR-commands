@@ -1,7 +1,7 @@
 from voice.imports import *
 
 BINDINGS = utilities.load_toml_relative("config/r.toml")
-
+rcontext = AppContext(title=BINDINGS["title_contexts"]) & ~AppContext(title=".rkt")
 
 def rfunc(rf, selection):
     if isinstance(rf, string_types):
@@ -18,7 +18,7 @@ def rfunc(rf, selection):
 
 
 Breathe.add_commands(
-    AppContext(title=BINDINGS["title_contexts"]),
+    rcontext,
     {
         "cheat sheet <module>": Function(
             lambda module: Popen(
@@ -31,7 +31,7 @@ Breathe.add_commands(
 )
 
 Breathe.add_commands(
-    AppContext(title=BINDINGS["title_contexts"]),
+    rcontext,
     {
         "<command>": Alternating("command"),
         "fun <function>": Read("selection")
