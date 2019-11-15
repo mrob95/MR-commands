@@ -1,8 +1,8 @@
 from voice.imports import *
 
 
-def Wait():
-    return Pause("15")
+def Wait(n=1):
+    return Pause(str(15*n))
 
 
 def Pallette(command):
@@ -139,6 +139,11 @@ Breathe.add_commands(
         "comment line": Key("c-slash"),
         "indent [<n2>]": Key("c-rbracket:%(n2)s"),
         "[auto] complete": Key("c-space"),
+
+        "meta buff": Key("ca-;") + Wait(),
+        "meta go": Key("a-;") + Wait(),
+        "meta sell": Key("sa-;") + Wait(),
     },
     [ShortIntegerRef("ln1", 1, 1000), IntegerRef("n2", 1, 9, 1)],
 )
+
