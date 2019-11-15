@@ -142,3 +142,12 @@ Breathe.add_commands(
     },
     [ShortIntegerRef("ln1", 1, 1000), IntegerRef("n2", 1, 9, 1)],
 )
+
+Breathe.add_commands(
+    AppContext(executable="Code.exe"),
+    {
+        "meta go [<buff>]": lambda buff: Key("ca-;" if buff else "a-;").execute() + Wait(),
+        "meta sell": Key("sa-;") + Wait(),
+    },
+    [Boolean("buff")],
+)
