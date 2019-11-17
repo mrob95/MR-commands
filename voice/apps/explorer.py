@@ -59,7 +59,7 @@ Breathe.add_commands(
         "(files | file list)": Key("a-d, f6:3"),
         "navigation [pane]": Key("a-d, f6:2"),
         "file name [<text>]": Key("a-d, f6:5") + Text("%(text)s"),
-        "go <folder>": Key("a-d/10") + Text("%(folder)s") + Key("enter"),
+        "go <folder>": Key("a-d/10") + Text("%(folder)s") + Key("enter/10, tab:4"),
         "dot <ext>": Text(".%(ext)s"),
         "follow <letter_rep>": Text("%(letter_rep)s") + Key("enter"),
     },

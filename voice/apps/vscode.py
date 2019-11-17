@@ -140,9 +140,9 @@ Breathe.add_commands(
         "indent [<n2>]": Key("c-rbracket:%(n2)s"),
         "[auto] complete": Key("c-space"),
 
-        "meta buff": Key("ca-;") + Wait(),
-        "meta go": Key("a-;") + Wait(),
+
         "meta sell": Key("sa-;") + Wait(),
+        "meta go": Key("c-;") + Wait(),
     },
     [ShortIntegerRef("ln1", 1, 1000), IntegerRef("n2", 1, 9, 1)],
 )
