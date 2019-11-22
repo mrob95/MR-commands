@@ -9,17 +9,16 @@ import time
 
 start = time.time()
 import logging
-
 logging.basicConfig()
 
-from voice.imports import *
+from my_commands.imports import *
 
 if get_engine()._name == "natlink":
-    from voice.utils import modes
+    from my_commands.utils import modes
 
-extras_module = {"voice": {"core": "globals"}}
+extras_module = {"my_commands": {"core": "globals"}}
 modules = {
-    "voice": {
+    "my_commands": {
         "core": [
             "alphanumeric",
             "alias",
