@@ -6,10 +6,20 @@ if profiling:
     pr.enable()
 
 import time
-
 start = time.time()
+
 import logging
+from my_commands.utils import utilities
+
+class ToastHandler(logging.Handler):
+    def emit(self, record):
+        msg = self.format(record)
+        utilities.toast_notify("Breathe error", msg)
+
 logging.basicConfig()
+logger = logging.getLogger('breathe_master')
+logger.addHandler(ToastHandler())
+
 
 from my_commands.imports import *
 

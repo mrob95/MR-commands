@@ -2,12 +2,6 @@ from my_commands.imports import *
 
 CORE = utilities.load_toml_relative("config/core.toml")
 
-def playback_history(n=1):
-    print(breathe_repetition_history)
-    if len(breathe_repetition_history) <= n:
-        raise ActionError("Not enough items in history: have %s, need %s", len(breathe_repetition_history), n)
-    Playback([(sequence, 0) for sequence in breathe_repetition_history[-n:]]).execute()
-
 Breathe.add_commands(
     None,
     {
@@ -16,8 +10,6 @@ Breathe.add_commands(
         ),
         "(<capitalisation> <spacing> | <capitalisation> | <spacing>) (bow|bowel) <text>":
             Function(textformat.master_format_text),
-
-        "repeat last [<n>]": playback_history,
     },
     [
         Choice("capitalisation", CORE["capitalisation"], 0),

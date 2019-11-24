@@ -48,3 +48,10 @@ Breathe.add_commands(
     ],
 )
 
+Breathe.add_commands(
+    AppContext("mintty.exe"),
+    {
+        "full screen": Key("a-f11"),
+    },
+    ccr=False
+)

@@ -12,29 +12,10 @@
 "mouse"                = "Mouse"
 "repeat"               = "Repeat"
 "text"                 = "Text"
-"add non ccr app rule" = "add_non_ccr_app_rule"
-"add app rule"         = "add_app_rule"
-"add global rule"      = "add_global_rule"
 
 
 [misc]
-"add app rule"                   = ["add_app_rule()", "left"]
-"add global rule"                = ["add_global_rule()", "left"]
-"class merge rule"               = ["class (MergeRule):", "left:12"]
-"control nexus merger"           = "control.nexus().merger."
-"from dragonfly import all"      = "from dragonfly import Dictation, Choice, Function, IntegerRef, "
-"from dragonfly import"          = "from dragonfly import "
-"import (libs | libraries)"      = "from caster.lib import control, utilities, execution"
-"Import [app] context"           = "from caster.lib.dfplus.context import AppContext"
-"import actions"                 = "from caster.lib.dfplus.actions import Key, Text, Mouse, Store, Retrieve"
-"import everything"                 = "from caster.imports import *"
-"import merge rule"              = "from caster.lib.merge.mergerule import MergeRule"
-"insert defaults"                = ["defaults = {}", "left, enter, tab"]
-"insert extras"                  = ["extras = []", "left, enter:2, up, tab"]
-"insert extra"                   = ["%()s", "left:2"]
-"insert mapping"                 = ["mapping = {}", "left, enter, tab"]
-"utilities load tommel relative" = ["utilities.load_toml_relative()", "left"]
-"utilities read selected"        = ["utilities.read_selected()", "left"]
+"breathe add commands" = ["Breathe.add_commands()", "left, enter"]
 
 [templates]
 "language rule" = '''

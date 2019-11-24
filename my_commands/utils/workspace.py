@@ -26,11 +26,12 @@ def move_current_to_new(follow=False):
 
 def go_to_n(n):
     current = vda.GetCurrentDesktopNumber() + 1
+    wait = "5" if abs(current-n) < 3 else "15"
     if n>=1 and n != current:
         if current>n:
-            Key("wc-left/15:" + str(current-n)).execute()
+            Key("wc-left/%s:%s" % (wait, str(current-n))).execute()
         else:
-            Key("wc-right/15:" + str(n-current)).execute()
+            Key("wc-right/%s:%s" % (wait, str(n-current))).execute()
     # vda.GoToDesktopNumber(n-1)
 
 def close_all():

@@ -2,7 +2,7 @@ from my_commands.imports import *
 
 
 def Wait(n=1):
-    return Pause(str(15*n))
+    return Pause(str(15 * n))
 
 
 def Pallette(command):
@@ -133,17 +133,23 @@ Breathe.add_commands(
 Breathe.add_commands(
     AppContext(executable="Code.exe"),
     {
-        "line <ln1>": Key("c-g") + Wait() + Text("%(ln1)s") + Key("enter"),
+        "[<end>] line <ln1>": Key("c-g")
+        + Wait()
+        + Text("%(ln1)s")
+        + Key("enter")
+        + Key("%(end)s"),
         "shunt [<n>]": Key("s-down:%(n)s"),
         "(go to | good) file": Key("c-p"),
         "comment line": Key("c-slash"),
         "indent [<n2>]": Key("c-rbracket:%(n2)s"),
         "[auto] complete": Key("c-space"),
-
-
         "meta sell": Key("sa-;") + Wait(),
         "meta go": Key("c-;") + Wait(),
     },
-    [ShortIntegerRef("ln1", 1, 1000), IntegerRef("n2", 1, 9, 1)],
+    [
+        ShortIntegerRef("ln1", 1, 1000),
+        IntegerRef("n2", 1, 9, 1),
+        Choice("end", "end", ""),
+    ],
 )
 

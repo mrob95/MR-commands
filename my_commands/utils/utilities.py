@@ -34,7 +34,7 @@ def diary():
 def toast_notify(title="title", message="message"):
     Popen([
             "python27",
-            BASE_PATH + "/lib/toaster.py",
+            BASE_PATH + "/utils/toaster.py",
             title,
             message
         ],

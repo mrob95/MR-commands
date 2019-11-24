@@ -14,7 +14,7 @@ Breathe.add_commands(
         "close work space": Key("wc-f4"),
         "next work [space] [<n>]": Key("wc-right") * Repeat("n"),
         "(previous | prior) work [space] [<n>]": Key("wc-left") * Repeat("n"),
-        "go work [space] <n>": Function(lambda n: workspace.go_to_n(n)),
+        "[go] work [space] <n>": Function(lambda n: workspace.go_to_n(n)),
         "send work [space] <n>": Function(lambda n: workspace.move_current_to_n(n)),
         "move work [space] <n>": Function(
             lambda n: workspace.move_current_to_n(n, True)
