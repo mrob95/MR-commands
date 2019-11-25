@@ -10,10 +10,13 @@ Breathe.add_commands(
         ),
         "(<capitalisation> <spacing> | <capitalisation> | <spacing>) (bow|bowel) <text>":
             Function(textformat.master_format_text),
+
+        "word <word>": Text("%(word)s"),
     },
     [
         Choice("capitalisation", CORE["capitalisation"], 0),
         Choice("spacing", CORE["spacing"], 0),
+        SingleWord("word"),
     ]
 )
 

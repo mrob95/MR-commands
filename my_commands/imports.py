@@ -3,7 +3,7 @@
 from dragonfly import *
 
 # from .lib.ccrmerger import CCRMerger
-from .utils.elements import Dictation, Choice, Boolean
+from .utils.elements import Dictation, Choice, Boolean, SingleWord
 from .utils import navigation, workspace, utilities
 from .utils import textformat, execution
 from .utils.actions import Text, Key, SlowKey, SlowText, Read
